@@ -1,5 +1,5 @@
 app-cassandra:
-  contactPoints: localhost
+  contactPoints: 192.168.0.111
   keyspaceName: user_registration
   localDatacenter: datacenter1
   schemaAction: create_if_not_exists
