@@ -2,12 +2,12 @@ package org.project2.config
 
 import com.datastax.oss.driver.api.core.CqlSession
 import com.datastax.oss.driver.shaded.guava.common.collect.ImmutableList
+import java.net.InetSocketAddress
 import org.project2.model.CassandraProperties
 import org.springframework.boot.context.properties.EnableConfigurationProperties
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
 import org.springframework.core.env.Environment
-import java.net.InetSocketAddress
 
 @Configuration
 @EnableConfigurationProperties(CassandraProperties::class)

@@ -1,5 +1,7 @@
 package org.project2.config
 
+import javax.servlet.http.HttpServletRequest
+import javax.servlet.http.HttpServletResponse
 import org.project2.model.JWTFilter
 import org.project2.repository.UserRepository
 import org.project2.service.CustomUserDetailsService
@@ -19,8 +21,6 @@ import org.springframework.security.core.AuthenticationException
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder
 import org.springframework.security.crypto.password.PasswordEncoder
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter
-import javax.servlet.http.HttpServletRequest
-import javax.servlet.http.HttpServletResponse
 
 /**
  * properties for WebSecurityBeans

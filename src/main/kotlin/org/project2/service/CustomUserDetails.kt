@@ -9,6 +9,11 @@ class CustomUserDetails: UserDetails {
 
     private lateinit var user: User
 
+    /*fun CustomUserDetails(user: User) {
+        super()
+        this.user = user
+    } */
+
     override fun getAuthorities(): Collection<GrantedAuthority?>? {
         return setOf(SimpleGrantedAuthority(user.role))
     }

@@ -1,6 +1,11 @@
 package org.project2.model
 
 import com.auth0.jwt.exceptions.JWTVerificationException
+import java.io.IOException
+import javax.servlet.FilterChain
+import javax.servlet.ServletException
+import javax.servlet.http.HttpServletRequest
+import javax.servlet.http.HttpServletResponse
 import org.project2.service.CustomUserDetailsService
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken
@@ -8,11 +13,6 @@ import org.springframework.security.core.context.SecurityContextHolder
 import org.springframework.security.core.userdetails.UserDetails
 import org.springframework.stereotype.Component
 import org.springframework.web.filter.OncePerRequestFilter
-import java.io.IOException
-import javax.servlet.FilterChain
-import javax.servlet.ServletException
-import javax.servlet.http.HttpServletRequest
-import javax.servlet.http.HttpServletResponse
 
 @Component // Marks this as a component. Now, Spring Boot will handle the creation and management of the JWTFilter Bean
 // and you will be able to inject it in other places of your code

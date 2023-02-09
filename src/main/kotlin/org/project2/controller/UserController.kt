@@ -1,5 +1,6 @@
 package org.project2.controller
 
+import java.util.*
 import org.project2.model.JWTUtil
 import org.project2.model.User
 import org.project2.repository.UserRepository
@@ -14,7 +15,6 @@ import org.springframework.web.bind.annotation.PathVariable
 import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RequestBody
 import org.springframework.web.bind.annotation.RestController
-import java.util.*
 
 @RestController
 class UserController {

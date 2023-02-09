@@ -4,8 +4,8 @@ import com.auth0.jwt.JWT
 import com.auth0.jwt.algorithms.Algorithm
 import com.auth0.jwt.exceptions.JWTCreationException
 import com.auth0.jwt.exceptions.JWTVerificationException
-import org.springframework.stereotype.Component
 import java.util.*
+import org.springframework.stereotype.Component
 
 @Component // Marks this as a component. Now, Spring Boot will handle the creation and management of the JWTUtil Bean
 // and you will be able to inject it in other places of your code
@@ -16,10 +16,10 @@ class JWTUtil {
     @Throws(IllegalArgumentException::class, JWTCreationException::class)
     fun generateToken(username: String?): String {
         return JWT.create()
-            .withSubject("User-Details")
+            .withSubject("User Details")
             .withClaim("username", username)
             .withIssuedAt(Date())
-            .withIssuer("Multiverse Project-12")
+            .withIssuer("Multiverse Project-2")
             .sign(Algorithm.HMAC256(secret))
     }
 
@@ -27,7 +27,7 @@ class JWTUtil {
     @Throws(JWTVerificationException::class)
     fun validateTokenAndRetrieveSubject(token: String?): String {
         val verifier = JWT.require(Algorithm.HMAC256(secret))
-            .withSubject("User-Details")
+            .withSubject("User Details")
             .withIssuer("Multiverse Project-2")
             .build()
         val jwt = verifier.verify(token)

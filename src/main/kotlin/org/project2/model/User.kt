@@ -3,7 +3,7 @@ package org.project2.model
 import org.springframework.data.cassandra.core.mapping.CassandraType
 import org.springframework.data.cassandra.core.mapping.PrimaryKey
 
-data class User(
+data class User (
     @PrimaryKey
     @CassandraType(type = CassandraType.Name.VARCHAR)
     val username: String,
