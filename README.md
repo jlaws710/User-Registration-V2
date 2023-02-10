@@ -31,6 +31,7 @@ Multiverse Project-2
     create keyspace user_registration with replication = {'class':'SimpleStrategy', 'replication_factor':1};
     create table User(username VARCHAR, firstName VARCHAR, lastName VARCHAR, email VARCHAR, password VARCHAR, role VARCHAR, creditCard VARCHAR, primary key(username, email));
     SELECT * FROM USER;
+    kubectl port-forward statefulset/cassandra 9042:9042
 
 ### Additional Links
 These additional references should also help you:
