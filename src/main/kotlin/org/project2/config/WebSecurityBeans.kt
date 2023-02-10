@@ -75,7 +75,7 @@ class WebSecurityBeans: WebSecurityConfigurerAdapter() {
             .authenticationEntryPoint() // Rejecting request as unauthorized when entry point is reached
             // If this point is reached it means that the current request requires authentication
             // and no JWT token was found attached to the Authorization header of the current request.
-            { request: HttpServletRequest, response: HttpServletResponse, authException: AuthenticationException ->
+            { _: HttpServletRequest, response: HttpServletResponse, _: AuthenticationException ->
                 response.sendError(
                     HttpServletResponse.SC_UNAUTHORIZED,
                     "Unauthorized"

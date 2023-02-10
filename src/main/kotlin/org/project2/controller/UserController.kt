@@ -51,13 +51,13 @@ class UserController {
 
         user.creditCard = "48212500$number"
 
-        if (user.firstName.equals("Joseph") && user.lastName.equals("Lawson")
-            || user.firstName.equals("Coral") && user.lastName.equals("Mejia")
+        if (user.firstName == "Joseph" && user.lastName == "Lawson"
+            || user.firstName == "Coral" && user.lastName == "Mejia"
         ) {
             user.role = "ADMIN"
         }
 
-        var user = userRepository.save(user)
+        val user = userRepository.save(user)
         val token = jwtUtil.generateToken(user.username)
         return Collections.singletonMap<String, Any>("jwt-token", token)
     }
@@ -75,7 +75,7 @@ class UserController {
     }
 
     @DeleteMapping("/user/{username}")
-    fun deleteUser(@PathVariable(value = "username") username: String?) {
+    fun deleteUser(@PathVariable(value = "username") username: String) {
         userRepository.deleteByUsername(username)
     }
 }
