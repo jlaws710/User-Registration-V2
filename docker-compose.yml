@@ -12,7 +12,7 @@ services:
       - cassandra
     links:
       - cassandra
-    restart: always
+    restart: on-failure
     stdin_open: true
     tty: true
 
